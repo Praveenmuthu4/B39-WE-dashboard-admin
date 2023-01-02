@@ -9,7 +9,7 @@ ChartJS.register(
 
 function LineChart() {
 
- const length = custom.length;
+//  const length = custom.length;
  const month = [];
  const value = [];
  custom.forEach(x=>{
@@ -49,16 +49,6 @@ function LineChart() {
             grid:{
                 display:false
             },
-            afterTickToLabelConversion: function(data){
-
-
-              const xLabels = data.ticks;
-
-              xLabels.forEach(function (month, i) {
-                  if (i % 2 === 1){
-                      xLabels[i] = '';
-                  }
-              });}
         },
         y:{
             min: 0,
@@ -76,7 +66,7 @@ function LineChart() {
 
   return (
     <div className="line-chart-data">
-      <Line data={data}  style={{width:'1100px', height:'300px'}}  options={{ maintainAspectRatio: false ,options}}  ></Line>
+      <Line data={data}  style={{width:'1100px', height:'300px'}}  options={{ maintainAspectRatio: false ,options}} setData={setData}  ></Line>
     </div>
   );
 }
