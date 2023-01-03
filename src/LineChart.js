@@ -45,6 +45,19 @@ function LineChart() {
           }
     },
     scales:{
+      xAxes: [{
+        afterTickToLabelConversion: function(data){
+
+
+            var xLabels = data.ticks;
+
+            xLabels.forEach(function (labels, i) {
+                if (i % 2 === 1){
+                    xLabels[i] = '';
+                }
+            });
+        } 
+    }],
         x:{
             grid:{
                 display:false
