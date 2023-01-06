@@ -12,10 +12,16 @@ function LineChart() {
 //  const length = custom.length;
  const month = [];
  const value = [];
- custom.forEach(x=>{
+ custom.map((x,i)=>{
+  if(i%2===0){
     month.push(x.month);
-    value.push(x.value);
+  }
+  else{
+    month.push('')
+  }
+  value.push(x.value);
 })
+
     
   const [data, setData]= useState({
     labels: month,
@@ -45,19 +51,7 @@ function LineChart() {
           }
     },
     scales:{
-      xAxes: [{
-        afterTickToLabelConversion: function(data){
-
-
-            var xLabels = data.ticks;
-
-            xLabels.forEach(function (labels, i) {
-                if (i % 2 === 1){
-                    xLabels[i] = '';
-                }
-            });
-        } 
-    }],
+      
         x:{
             grid:{
                 display:false
@@ -79,7 +73,7 @@ function LineChart() {
 
   return (
     <div className="line-chart-data">
-      <Line data={data}  style={{width:'1100px', height:'300px'}}  options={{ maintainAspectRatio: false ,options}} setData={setData}  ></Line>
+      <Line data={data}  options={options} style={{width:'100%' , height:'310px' }}></Line>
     </div>
   );
 }
