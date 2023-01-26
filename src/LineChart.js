@@ -9,7 +9,6 @@ ChartJS.register(
 
 function LineChart() {
 
-//  const length = custom.length;
  const month = [];
  const value = [];
  custom.map((x,i)=>{
@@ -21,6 +20,17 @@ function LineChart() {
   }
   value.push(x.value);
 })
+
+// const chart = new Chart(ctx, {
+//   type: 'line',
+//   data: data,
+//   options: {
+//     responsive: false,
+//     maintainAspectRatio: false,
+//     width: 500,
+//     height: 300
+//   }
+// });
 
     
   const [data, setData]= useState({
@@ -73,7 +83,7 @@ function LineChart() {
 
   return (
     <div className="line-chart-data">
-      <Line data={data}  options={options} style={{width:'100%' , height:'310px' }}></Line>
+      <Line data={data}  options={options} height={90}></Line>
     </div>
   );
 }

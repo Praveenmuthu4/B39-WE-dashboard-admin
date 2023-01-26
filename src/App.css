@@ -438,13 +438,16 @@ border: 0px solid gray;
 }
 .line-chart-data{
   margin: 20px;
+  /* min-height: 339px; */
 }
-
+.line-chart-innerData{
+  height: 50px;
+}
 .line-chart{
   margin-left: 75px;
   margin-top: 15px;
-  height: 430px;
   width: 1200px;
+  max-height: 430px;
   border: 1px solid black;
 }
 .chart-header1{
